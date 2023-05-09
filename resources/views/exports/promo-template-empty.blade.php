@@ -1,0 +1,37 @@
+<table>
+    <thead>
+    <tr>
+        <th>location</th>
+        <th>category</th>
+        <th>brand</th>
+        <th>rank</th>
+        <th>cta_url</th>
+        <th>start_date</th>
+        <th>end_date</th>
+        <th>headline_en</th>
+        <th>title_en</th>
+        <th>cta_title_en</th>
+        <th>terms_en</th>
+        <th>headline_id</th>
+        <th>title_id</th>
+        <th>cta_title_id</th>
+        <th>terms_id</th>
+        <th>seo_title_en</th>
+        <th>seo_description_en</th>
+        <th>seo_keyword_en</th>
+        <th>open_graph_type_en</th>
+        <th>seo_title_id</th>
+        <th>seo_description_id</th>
+        <th>seo_keyword_id</th>
+        <th>open_graph_type_id</th>
+        <th>banner_rank</th>
+        <th>is_main_banner</th>
+        <th>banner_url_id</th>
+        <th>banner_url_en</th>
+        <th>thumbnail_url</th>
+    </tr>
+    </thead>
+    <tbody>
+    {{-- no data (only template) --}}
+    </tbody>
+</table>

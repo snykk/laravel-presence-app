@@ -17,6 +17,12 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
+Route::prefix("/auth")->group(function () {
+    Route::post("/login", "AuthController@login");
+    Route::post("/logout", "AuthController@logout")->middleware("auth:sanctum");
+  });
+  
+
 Route::middleware('auth:web')->group(static function () {
     Route::apiResource('/admins', 'AdminsController')->only(['index', 'show']);
     Route::apiResource('/permissions', 'PermissionsController')->only(['index', 'show']);
@@ -28,4 +34,5 @@ Route::apiResource('/seo_metas', 'SeoMetasController')->only(['index', 'show']);
 
 Route::prefix('{locale}')->middleware(['check.locale'])->group(function () {
     Route::apiResource('/components', 'ComponentsController')->only(['index', 'show']);
+    Route::apiResource('/departments', 'DepartmentsController')->only(['index', 'show']);
 });

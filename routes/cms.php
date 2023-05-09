@@ -52,3 +52,11 @@ Route::get('/privacy_policies', 'PrivacyPolicies\PrivacyPoliciesIndex')->name('p
 Route::get('/privacy_policies/create', 'PrivacyPolicies\CreatePrivacyPolicy')->name('privacy_policies.create');
 Route::get('/privacy_policies/{privacyPolicyId}', 'PrivacyPolicies\ShowPrivacyPolicy')->name('privacy_policies.show');
 Route::get('/privacy_policies/{privacyPolicyId}/edit', 'PrivacyPolicies\EditPrivacyPolicy')->name('privacy_policies.edit');
+
+/**
+ * Begin route definition for `Departments` resources.
+ */
+Route::get('/departments', 'Departments\DepartmentsIndex')->name('departments.index');
+Route::get('/departments/create', 'Departments\CreateDepartment')->name('departments.create');
+Route::get('/departments/{department}', 'Departments\ShowDepartment')->name('departments.show');
+Route::get('/departments/{department}/edit', 'Departments\EditDepartment')->name('departments.edit');

@@ -60,12 +60,12 @@ return [
                     'icon'       => 'menu-icon fa fa-lightbulb',
                     'permission' => 'cms.privacy_policies.view',
                 ],
-                // [
-                //     'title'      => 'Privacy Policy Detail',
-                //     'url'        => '/cms/privacy_details',
-                //     'icon'       => 'menu-icon fa fa-lightbulb',
-                //     'permission' => 'cms.privacy_details.view',
-                // ],
+                [
+                    'title'      => 'Departments',
+                    'url'        => '/cms/departments',
+                    'icon'       => 'menu-icon fa fa-lightbulb',
+                    'permission' => 'cms.departments.view',
+                ],
             ],
         ],
     ],

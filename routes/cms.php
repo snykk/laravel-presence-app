@@ -69,3 +69,12 @@ Route::get('/schedules', 'Schedules\SchedulesIndex')->name('schedules.index');
 Route::get('/schedules/create', 'Schedules\CreateSchedule')->name('schedules.create');
 Route::get('/schedules/{schedule}', 'Schedules\ShowSchedule')->name('schedules.show');
 Route::get('/schedules/{schedule}/edit', 'Schedules\EditSchedule')->name('schedules.edit');
+
+
+/**
+ * Begin route definition for `Subjects` resources.
+ */
+Route::get('/subjects', 'Subjects\SubjectsIndex')->name('subjects.index');
+Route::get('/subjects/create', 'Subjects\CreateSubject')->name('subjects.create');
+Route::get('/subjects/{subject}', 'Subjects\ShowSubject')->name('subjects.show');
+Route::get('/subjects/{subject}/edit', 'Subjects\EditSubject')->name('subjects.edit');

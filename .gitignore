@@ -70,3 +70,4 @@ npm-debug.log
 yarn-error.log
 config/telescope.php
 public/vendor/telescope/*
+makefile

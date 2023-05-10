@@ -35,8 +35,7 @@ Route::apiResource('/seo_metas', 'SeoMetasController')->only(['index', 'show']);
 Route::prefix('{locale}')->middleware(['check.locale'])->group(function () {
     Route::apiResource('/components', 'ComponentsController')->only(['index', 'show']);
     Route::apiResource('/departments', 'DepartmentsController')->only(['index', 'show']);
+    Route::apiResource('/subjects', 'SubjectsController');
 });
 
-Route::apiResource('/schedules', 'SchedulesController');
-Route::apiResource('/schedules', 'SchedulesController');
 Route::apiResource('/schedules', 'SchedulesController');

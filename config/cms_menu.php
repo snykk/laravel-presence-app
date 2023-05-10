@@ -72,6 +72,12 @@ return [
                     'icon'       => 'menu-icon fa fa-lightbulb',
                     'permission' => 'cms.schedules.view',
                 ],
+                [
+                    'title'      => 'Subjects',
+                    'url'        => '/cms/subjects',
+                    'icon'       => 'menu-icon fa fa-lightbulb',
+                    'permission' => 'cms.subjects.view',
+                ],
             ],
         ],
     ],

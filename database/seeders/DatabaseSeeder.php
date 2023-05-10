@@ -26,5 +26,6 @@ class DatabaseSeeder extends Seeder
         $this->call(PrivacyPolicySeeder::class);
         $this->call(DepartmentSeeder::class);
         $this->call(ScheduleSeeder::class);
+        $this->call(SubjectSeeder::class);
     }
 }

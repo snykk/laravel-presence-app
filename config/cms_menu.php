@@ -78,6 +78,12 @@ return [
                     'icon'       => 'menu-icon fa fa-newspaper',
                     'permission' => 'cms.subjects.view',
                 ],
+                [
+                    'title'      => 'Subject Schedules',
+                    'url'        => '/cms/subject_schedules',
+                    'icon'       => 'menu-icon fa fa-newspaper',
+                    'permission' => 'cms.subject_schedules.view',
+                ],
             ],
         ],
     ],

@@ -3,6 +3,7 @@
 namespace App\Http\Livewire\Cms\SubjectSchedules;
 
 use App\Models\SubjectSchedule;
+use App\Models\SubjectTranslation;
 use Cms\Livewire\DatatableColumn;
 use Cms\Livewire\DatatableComponent;
 use Illuminate\Database\Eloquent\Builder;
@@ -18,24 +19,12 @@ class SubjectSchedulesIndex extends DatatableComponent
     {
         return $this->applyColumnVisibility([
             DatatableColumn::make('id'),
-            DatatableColumn::make('subject_id'),
-            DatatableColumn::make('schedule_id'),
+            DatatableColumn::make('subject_title')->setTitle('Subject'),
+            DatatableColumn::make('seq'),
+            DatatableColumn::make('start_time'),
+            DatatableColumn::make('end_time'),
             DatatableColumn::make('created_at'),
             DatatableColumn::make('updated_at'),
-
-            DatatableColumn::make('subject.id'),
-            DatatableColumn::make('subject.department_id'),
-            DatatableColumn::make('subject.code'),
-            DatatableColumn::make('subject.score_credit'),
-            DatatableColumn::make('subject.created_at'),
-            DatatableColumn::make('subject.updated_at'),
-
-            DatatableColumn::make('schedule.id'),
-            DatatableColumn::make('schedule.seq'),
-            DatatableColumn::make('schedule.start_time'),
-            DatatableColumn::make('schedule.end_time'),
-            DatatableColumn::make('schedule.created_at'),
-            DatatableColumn::make('schedule.updated_at'),
         ]);
     }
 
@@ -72,9 +61,16 @@ class SubjectSchedulesIndex extends DatatableComponent
      */
     protected function newQuery(): Builder
     {
+        $locale = request()->query('locale') ?? 'en';
+
         return (new SubjectSchedule())
             ->newQuery()
-// query relations
+            ->leftJoin('subjects', 'subject_schedules.subject_id', '=', 'subjects.id')
+            ->leftJoinSub(SubjectTranslation::where('locale', $locale)->select(['title', 'subject_id']), 'subject_translations', function ($join) {
+                $join->on('subjects.id', 'subject_translations.subject_id');
+            })
+            ->leftJoin('schedules', 'subject_schedules.schedule_id', '=', 'schedules.id')
+            ->select(['subject_schedules.*', 'subject_translations.title as subject_title', 'schedules.start_time','schedules.end_time','schedules.seq']);
 ;
     }
 

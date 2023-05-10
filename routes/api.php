@@ -36,3 +36,7 @@ Route::prefix('{locale}')->middleware(['check.locale'])->group(function () {
     Route::apiResource('/components', 'ComponentsController')->only(['index', 'show']);
     Route::apiResource('/departments', 'DepartmentsController')->only(['index', 'show']);
 });
+
+Route::apiResource('/schedules', 'SchedulesController');
+Route::apiResource('/schedules', 'SchedulesController');
+Route::apiResource('/schedules', 'SchedulesController');

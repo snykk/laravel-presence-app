@@ -2,12 +2,11 @@
 
 namespace App\Http\Resources;
 
-use Cms\Resources\Concerns\StripResourceElements;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class DepartmentResource extends JsonResource
+class ScheduleResource extends JsonResource
 {
-    use StripResourceElements;
+// Used traits declaration
     /**
      * Transform the resource into an array.
      *
@@ -17,6 +16,6 @@ class DepartmentResource extends JsonResource
      */
     public function toArray($request)
     {
-        return $this->stripElementsFromResource((array) parent::toArray($request), ['translations']);
+        return (array) parent::toArray($request);
     }
 }

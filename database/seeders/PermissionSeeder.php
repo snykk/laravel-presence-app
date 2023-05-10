@@ -24,6 +24,7 @@ class PermissionSeeder extends Seeder
         $this->createResourcePermissionsFor('roles');
         $this->createResourcePermissionsFor('seo_metas');
         $this->createResourcePermissionsFor('departments');
+        $this->createResourcePermissionsFor('schedules');
 
         Permission::where('name', 'cms.settings.create')
             ->orWhere('name', 'cms.settings.delete')

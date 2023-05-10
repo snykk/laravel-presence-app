@@ -60,3 +60,12 @@ Route::get('/departments', 'Departments\DepartmentsIndex')->name('departments.in
 Route::get('/departments/create', 'Departments\CreateDepartment')->name('departments.create');
 Route::get('/departments/{department}', 'Departments\ShowDepartment')->name('departments.show');
 Route::get('/departments/{department}/edit', 'Departments\EditDepartment')->name('departments.edit');
+
+
+/**
+ * Begin route definition for `Schedules` resources.
+ */
+Route::get('/schedules', 'Schedules\SchedulesIndex')->name('schedules.index');
+Route::get('/schedules/create', 'Schedules\CreateSchedule')->name('schedules.create');
+Route::get('/schedules/{schedule}', 'Schedules\ShowSchedule')->name('schedules.show');
+Route::get('/schedules/{schedule}/edit', 'Schedules\EditSchedule')->name('schedules.edit');

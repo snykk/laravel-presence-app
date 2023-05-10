@@ -66,6 +66,12 @@ return [
                     'icon'       => 'menu-icon fa fa-lightbulb',
                     'permission' => 'cms.departments.view',
                 ],
+                [
+                    'title'      => 'Schedules',
+                    'url'        => '/cms/schedules',
+                    'icon'       => 'menu-icon fa fa-lightbulb',
+                    'permission' => 'cms.schedules.view',
+                ],
             ],
         ],
     ],

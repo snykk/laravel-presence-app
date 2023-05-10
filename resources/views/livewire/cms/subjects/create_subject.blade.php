@@ -21,17 +21,18 @@
                     <form class="form" wire:submit.prevent="save">
                         {{ CmsForm::setErrorBag($errors) }}
 
-                        {!! CmsForm::number('subject.department_id') !!}
+                        {!! CmsForm::select('subject.department_id', $departmentOptions)->setTitle("Department") !!}
                         {!! CmsForm::text('subject.code') !!}
                         {!! CmsForm::number('subject.score_credit') !!}
 
                         @multilingual
-                            {!! CmsForm::text('title') !!}
+                        {!! CmsForm::text('title') !!}
                         @endmultilingual
 
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">Save Subject</button>
-                            <button wire:click="backToIndex()" type="button" class="btn btn-light-primary ml-2">Cancel</button>
+                            <button wire:click="backToIndex()" type="button"
+                              class="btn btn-light-primary ml-2">Cancel</button>
                         </div>
                     </form>
                 </div>

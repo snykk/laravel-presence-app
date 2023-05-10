@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Cms\Subjects;
 
+use App\Models\Department;
 use App\Models\Subject;
 use Cms\Livewire\Concerns\ResolveCurrentAdmin;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -29,6 +30,13 @@ abstract class SubjectForm extends Component
     protected string $operation;
 
     /**
+     * The department value options.
+     *
+     * @var array|string[]
+     */
+    public array $departmentOptions = [];
+
+    /**
      * The validation rules for subject model.
      *
      * @var string[]
@@ -40,7 +48,13 @@ abstract class SubjectForm extends Component
         'translations.title.en' => 'required|string|min:2|max:120',
         'translations.title.id' => 'required|string|min:2|max:120',
     ];
-// translations property
+    
+    /**
+     * A property to store all of the translations data.
+     *
+     * @var array
+     */
+    public array $translations = [];
 
     /**
      * Redirect and go back to index page.
@@ -117,7 +131,13 @@ abstract class SubjectForm extends Component
     public function mount(): void
     {
         $this->confirmAuthorization();
-// translations initialization
+        
+        $this->translations = $this->subject->getAllTranslatableValues();
+
+        $this->departmentOptions += Department::all()->pluck('name', 'id')->toArray();
+        if (!$this->subject->department_id) {
+            $this->subject->department_id = array_keys($this->departmentOptions)[0];
+        }
     }
 
     /**
@@ -136,7 +156,8 @@ abstract class SubjectForm extends Component
         $this->confirmAuthorization();
         $this->validate();
 
-// assign translation values to current model
+        // assign translation values to current model
+        $this->subject->fill($this->translations);
         $this->subject->save();
 
         session()->flash('alertType', 'success');

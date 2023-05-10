@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateSubjectScheduleTable extends Migration
+class CreateSubjectSchedulesTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateSubjectScheduleTable extends Migration
      */
     public function up()
     {
-        Schema::create('subject_schedule', function (Blueprint $table) {
+        Schema::create('subject_schedules', function (Blueprint $table) {
             $table->id();
             $table->foreignId('subject_id')->constrained()->onDelete('cascade');
             $table->foreignId('schedule_id')->constrained()->onDelete('cascade');
@@ -29,6 +29,6 @@ class CreateSubjectScheduleTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('subject_schedule');
+        Schema::dropIfExists('subject_schedules');
     }
 }

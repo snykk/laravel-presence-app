@@ -16,14 +16,16 @@ class SubjectScheduleSeeder extends Seeder
      */
     public function run()
     {
+        $classIndexs = ['A', 'B', 'C'];
         $subjectIds = Subject::pluck('id')->toArray();
         $scheduleIds = Schedule::pluck('id')->toArray();
 
-        foreach ($subjectIds as $subjectId) {
-            foreach ($scheduleIds as $scheduleId) {
+        foreach($subjectIds as $subjectId) {
+            foreach($classIndexs as $classIndex) {
                 SubjectSchedule::create([
                     'subject_id' => $subjectId,
-                    'schedule_id' => $scheduleId,
+                    'class_index' => $classIndex,
+                    'schedule_id' => $scheduleIds[random_int(0, count($scheduleIds)-1)],
                 ]);
             }
         }

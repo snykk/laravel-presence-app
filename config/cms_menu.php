@@ -63,19 +63,19 @@ return [
                 [
                     'title'      => 'Departments',
                     'url'        => '/cms/departments',
-                    'icon'       => 'menu-icon fa fa-lightbulb',
+                    'icon'       => 'menu-icon fa fa-user-lock',
                     'permission' => 'cms.departments.view',
                 ],
                 [
                     'title'      => 'Schedules',
                     'url'        => '/cms/schedules',
-                    'icon'       => 'menu-icon fa fa-lightbulb',
+                    'icon'       => 'menu-icon fa fa fa-gift',
                     'permission' => 'cms.schedules.view',
                 ],
                 [
                     'title'      => 'Subjects',
                     'url'        => '/cms/subjects',
-                    'icon'       => 'menu-icon fa fa-lightbulb',
+                    'icon'       => 'menu-icon fa fa-newspaper',
                     'permission' => 'cms.subjects.view',
                 ],
             ],

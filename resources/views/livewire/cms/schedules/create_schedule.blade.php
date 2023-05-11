@@ -21,13 +21,14 @@
                     <form class="form" wire:submit.prevent="save">
                         {{ CmsForm::setErrorBag($errors) }}
 
-                        {!! CmsForm::number('schedule.seq') !!}
+                        {!! CmsForm::number('schedule.seq', ['disabled'=>'disabled']) !!}
                         {!! CmsForm::time('schedule.start_time') !!}
                         {!! CmsForm::time('schedule.end_time') !!}
 
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">Save Schedule</button>
-                            <button wire:click="backToIndex()" type="button" class="btn btn-light-primary ml-2">Cancel</button>
+                            <button wire:click="backToIndex()" type="button"
+                              class="btn btn-light-primary ml-2">Cancel</button>
                         </div>
                     </form>
                 </div>

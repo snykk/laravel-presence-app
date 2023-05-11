@@ -116,6 +116,10 @@ abstract class ScheduleForm extends Component
     {
         $this->confirmAuthorization();
 // translations initialization
+
+        if ($this->operation === 'create') {
+            $this->schedule->seq = Schedule::latest()->first()->seq + 1;
+        }
     }
 
     /**

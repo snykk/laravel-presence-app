@@ -22,7 +22,7 @@
                         {{ CmsForm::setErrorBag($errors) }}
 
                         {{-- {{ $schedule->start_time }} --}}
-                        {!! CmsForm::number('schedule.seq') !!}
+                        {!! CmsForm::number('schedule.seq', ['disabled' => 'disabled']) !!}
                         {!! CmsForm::time('schedule.start_time') !!}
                         {!! CmsForm::time('schedule.end_time') !!}
 

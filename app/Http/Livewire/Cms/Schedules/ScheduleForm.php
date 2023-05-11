@@ -35,8 +35,8 @@ abstract class ScheduleForm extends Component
      */
     protected array $rules = [
         'schedule.seq' => 'required|integer|between:0,65535',
-        'schedule.start_time' => 'required|date',
-        'schedule.end_time' => 'required|date',
+        'schedule.start_time' => 'required',
+        'schedule.end_time' => 'required',
     ];
 // translations property
 

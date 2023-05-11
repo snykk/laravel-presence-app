@@ -83,6 +83,7 @@ abstract class SubjectScheduleForm extends Component
      */
     protected function confirmAuthorization(): void
     {
+        dd($this);
         $permission = 'cms.' . $this->subjectSchedule->getTable() . '.' . $this->operation;
 
         if (!$this->getCurrentAdminProperty()->can($permission)) {

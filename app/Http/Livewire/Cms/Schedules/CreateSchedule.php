@@ -14,15 +14,15 @@ class CreateSchedule extends ScheduleForm
      */
     protected string $operation = 'create';
 
-    // /**
-    //  * Handle the `mount` lifecycle event.
-    //  */
-    // public function mount(): void
-    // {
-    //     $this->schedule = new Schedule();
+    /**
+     * Handle the `mount` lifecycle event.
+     */
+    public function mount(): void
+    {
+        $this->schedule = new Schedule();
 
-    //     parent::mount();
-    // }
+        parent::mount();
+    }
 
     /**
      * Render the LiveWire component.

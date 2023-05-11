@@ -19,12 +19,8 @@ class SchedulesIndex extends DatatableComponent
         return $this->applyColumnVisibility([
             DatatableColumn::make('id'),
             DatatableColumn::make('seq'),
-            DatatableColumn::make('start_time')->renderWith(function ($model) {
-                return $model->start_time->format('H:i:s');
-            })->setTitle('Start Time'),
-            DatatableColumn::make('end_time')->renderWith(function ($model) {
-                return $model->end_time->format('H:i:s');
-            })->setTitle('End Time'),
+            DatatableColumn::make('start_time'),
+            DatatableColumn::make('end_time'),
             DatatableColumn::make('created_at'),
             DatatableColumn::make('updated_at'),
         ]);

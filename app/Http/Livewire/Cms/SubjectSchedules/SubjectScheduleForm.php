@@ -2,6 +2,8 @@
 
 namespace App\Http\Livewire\Cms\SubjectSchedules;
 
+use App\Models\Schedule;
+use App\Models\Subject;
 use App\Models\SubjectSchedule;
 use Cms\Livewire\Concerns\ResolveCurrentAdmin;
 use Illuminate\Auth\Access\AuthorizationException;
@@ -34,10 +36,32 @@ abstract class SubjectScheduleForm extends Component
      * @var string[]
      */
     protected array $rules = [
-        'subjectSchedule.subject_id' => 'required|integer|between:0,18446744073709551615',
-        'subjectSchedule.schedule_id' => 'required|integer|between:0,18446744073709551615',
+        'subjectSchedule.subject_id' => 'required|integer',
+        'subjectSchedule.schedule_id' => 'required|integer',
+        'subjectSchedule.class_index' => 'required',
     ];
 // translations property
+
+    /**
+     * The subject value options.
+     *
+     * @var array|string[]
+     */
+    public array $subjectOptions = [];
+
+    /**
+     * The scheduel value options.
+     *
+     * @var array|string[]
+     */
+    public array $scheduleOptions = [];
+
+    /**
+     * The scheduel value options.
+     *
+     * @var array|string[]
+     */
+    public array $classIndexOptions = [];
 
     /**
      * Redirect and go back to index page.
@@ -114,7 +138,26 @@ abstract class SubjectScheduleForm extends Component
     public function mount(): void
     {
         $this->confirmAuthorization();
-// translations initialization
+
+        $this->subjectOptions = Subject::all()->pluck('title','id')->toArray();
+        $this->classIndexOptions = [
+            'A' => 'A',
+            'B' => 'B',
+            'C' => 'C',
+        ];
+
+        if (!$this->subjectSchedule->subject_id) {
+            $this->subjectSchedule->subject_id =array_keys($this->subjectOptions)[0];
+            $this->subjectSchedule->class_index =array_keys($this->classIndexOptions)[0];
+        }
+
+        $scheduleList = [];
+
+        foreach(Schedule::all() as $schedule) {
+            $scheduleList[$schedule->id] = $schedule->start_time->format('H:i:s') . ' - ' . $schedule->end_time->format('H:i:s');
+        }
+
+        $this->scheduleOptions = $scheduleList;
     }
 
     /**

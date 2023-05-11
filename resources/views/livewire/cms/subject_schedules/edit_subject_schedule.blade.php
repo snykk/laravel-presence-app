@@ -21,12 +21,15 @@
                     <form class="form" wire:submit.prevent="save">
                         {{ CmsForm::setErrorBag($errors) }}
 
-                        {!! CmsForm::number('subjectSchedule.subject_id') !!}
-                        {!! CmsForm::number('subjectSchedule.schedule_id') !!}
+                        {!! CmsForm::select('subjectSchedule.subject_id', $subjectOptions)->setTitle('Subject') !!}
+                        {!! CmsForm::select('subjectSchedule.schedule_id', $scheduleOptions)->setTitle('Schedule') !!}
+                        {!! CmsForm::select('subjectSchedule.class_index', $classIndexOptions)->setTitle('Class Index')
+                        !!}
 
                         <div class="form-group text-center">
                             <button type="submit" class="btn btn-primary">Update Subject Schedule</button>
-                            <button wire:click="backToIndex()" type="button" class="btn btn-light-primary ml-2">Cancel</button>
+                            <button wire:click="backToIndex()" type="button"
+                              class="btn btn-light-primary ml-2">Cancel</button>
                         </div>
                     </form>
                 </div>

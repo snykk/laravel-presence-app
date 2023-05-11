@@ -20,6 +20,7 @@ class SubjectSchedulesIndex extends DatatableComponent
         return $this->applyColumnVisibility([
             DatatableColumn::make('id'),
             DatatableColumn::make('subject_title')->setTitle('Subject'),
+            DatatableColumn::make('class_index'),
             DatatableColumn::make('seq'),
             DatatableColumn::make('start_time'),
             DatatableColumn::make('end_time'),

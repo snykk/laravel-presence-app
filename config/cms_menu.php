@@ -90,6 +90,12 @@ return [
                     'icon'       => 'menu-icon fa fa-building',
                     'permission' => 'cms.buildings.view',
                 ],
+                [
+                    'title'      => 'Classrooms',
+                    'url'        => '/cms/classrooms',
+                    'icon'       => 'menu-icon fa fa-door-open',
+                    'permission' => 'cms.classrooms.view',
+                ],
             ],
         ],
     ],

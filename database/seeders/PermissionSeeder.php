@@ -28,6 +28,7 @@ class PermissionSeeder extends Seeder
         $this->createResourcePermissionsFor('subjects');
         $this->createResourcePermissionsFor('subject_schedules');
         $this->createResourcePermissionsFor('buildings');
+        $this->createResourcePermissionsFor('classrooms');
 
         Permission::where('name', 'cms.settings.create')
             ->orWhere('name', 'cms.settings.delete')

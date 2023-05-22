@@ -96,3 +96,12 @@ Route::get('/buildings', 'Buildings\BuildingsIndex')->name('buildings.index');
 Route::get('/buildings/create', 'Buildings\CreateBuilding')->name('buildings.create');
 Route::get('/buildings/{building}', 'Buildings\ShowBuilding')->name('buildings.show');
 Route::get('/buildings/{building}/edit', 'Buildings\EditBuilding')->name('buildings.edit');
+
+
+/**
+ * Begin route definition for `Classrooms` resources.
+ */
+Route::get('/classrooms', 'Classrooms\ClassroomsIndex')->name('classrooms.index');
+Route::get('/classrooms/create', 'Classrooms\CreateClassroom')->name('classrooms.create');
+Route::get('/classrooms/{classroom}', 'Classrooms\ShowClassroom')->name('classrooms.show');
+Route::get('/classrooms/{classroom}/edit', 'Classrooms\EditClassroom')->name('classrooms.edit');

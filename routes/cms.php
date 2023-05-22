@@ -87,3 +87,12 @@ Route::get('/subject_schedules', 'SubjectSchedules\SubjectSchedulesIndex')->name
 Route::get('/subject_schedules/create', 'SubjectSchedules\CreateSubjectSchedule')->name('subject_schedules.create');
 Route::get('/subject_schedules/{subjectSchedule}', 'SubjectSchedules\ShowSubjectSchedule')->name('subject_schedules.show');
 Route::get('/subject_schedules/{subjectSchedule}/edit', 'SubjectSchedules\EditSubjectSchedule')->name('subject_schedules.edit');
+
+
+/**
+ * Begin route definition for `Buildings` resources.
+ */
+Route::get('/buildings', 'Buildings\BuildingsIndex')->name('buildings.index');
+Route::get('/buildings/create', 'Buildings\CreateBuilding')->name('buildings.create');
+Route::get('/buildings/{building}', 'Buildings\ShowBuilding')->name('buildings.show');
+Route::get('/buildings/{building}/edit', 'Buildings\EditBuilding')->name('buildings.edit');

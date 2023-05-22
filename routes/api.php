@@ -40,3 +40,4 @@ Route::prefix('{locale}')->middleware(['check.locale'])->group(function () {
 
 Route::apiResource('/schedules', 'SchedulesController');
 Route::apiResource('/subject_schedules', 'SubjectSchedulesController');
+Route::apiResource('/buildings', 'BuildingsController');

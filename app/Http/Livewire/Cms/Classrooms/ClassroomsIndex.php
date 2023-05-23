@@ -18,7 +18,7 @@ class ClassroomsIndex extends DatatableComponent
     {
         return $this->applyColumnVisibility([
             DatatableColumn::make('id'),
-            DatatableColumn::make('building_id'),
+            DatatableColumn::make('building.name'),
             DatatableColumn::make('room_number'),
             DatatableColumn::make('capacity'),
             DatatableColumn::make('floor'),
@@ -26,11 +26,6 @@ class ClassroomsIndex extends DatatableComponent
             DatatableColumn::make('created_at'),
             DatatableColumn::make('updated_at'),
 
-            DatatableColumn::make('building.id'),
-            DatatableColumn::make('building.name'),
-            DatatableColumn::make('building.address'),
-            DatatableColumn::make('building.created_at'),
-            DatatableColumn::make('building.updated_at'),
         ]);
     }
 
